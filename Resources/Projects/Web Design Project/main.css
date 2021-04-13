@@ -1,0 +1,115 @@
+ body
+{
+ 
+    font-family: 'IBM Plex Serif', serif;
+} 
+header 
+{
+    margin:0 1% ;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-size: 20% 70%;
+    background-position: center;
+}
+header h1
+{
+    line-height: 140px;
+    font-size: 70px;
+    margin:3%;
+}
+
+nav
+{
+    width:100%;
+}
+nav ul
+{
+    width:80%;
+    margin-left: 7%;
+    
+}
+nav ul li
+{
+    border-right: 2px solid black;
+    list-style: none;
+    display: inline;
+    margin:0;
+    padding:0 8%;
+    
+    /* border-left: 1px solid black; */
+}
+nav ul li a
+{
+    text-decoration: none;
+    font-size: x-large;
+    color:black;
+}
+article
+{
+    width: 61.8%;
+    margin:0;
+    margin:0 1% ;
+}
+main
+{
+    width:100%;
+}
+article h2
+{
+    margin:3%;
+    font-size: xx-large;
+    
+    
+}
+article p
+{
+    margin: 3%;
+    font-size: x-large;
+
+}
+.photo
+{
+    width:90%;
+    margin:2%;
+    margin-left: 4%;
+}
+.pic
+{
+    width:90%;
+    margin:2%;
+    margin-left:4%;
+}
+
+aside
+{
+    width: 33%;
+    float: right;
+    /* margin-top:-3092px; */
+    margin-right:2% ;
+}
+aside h2
+{
+    text-align: center;
+    font-size: xx-large;
+   
+}
+aside h3
+{
+    
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+footer
+{
+    text-align: center;
+    padding:1px 0;
+    width:100%;
+    
+}
+footer a
+{
+    text-decoration: underline;
+    color:black;
+}

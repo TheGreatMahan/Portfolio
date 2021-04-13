@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Form validation</title>
+</head>
+<body>
+	<a href="../../../index.html">Go Back</a>
+    <div id="registration">
+        
+        <h1>Registration Form</h1>
+        
+        <div class="content">
+            <div class="input">
+                <label>Name</label>
+                <br>
+                <input type="text" id="name" placeholder="Enter your name...">
+                <div class="invalid" id="invalidname"></div>
+            </div>
+
+            <div class="input">
+                <label>Email</label>
+                <br>
+                <input type="text" id="email" placeholder="Enter your email address...">
+                <div class="invalid" id="invalidemail"></div>
+            </div>
+            <div class="input">
+                <label>Education</label><br>
+                <select id="education">
+                    <option value="0"></option>
+                    <option value="1">Computer Sciences</option>
+                    <option value="2">Engineering</option>
+                    <option value="3">Medical Sciences</option>
+                    <option value="4">Culinary</option>
+                    <option value="5">Business</option>
+                    <option value="6">Other</option>
+                </select>
+                <div class="invalid" id="invalideducation"></div>
+            </div>
+
+            <div class="input" id="gender" >
+                <label>Sex</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <div class="invalid" id="invalidgender"></div>
+                <br>
+
+            </div>
+
+            <div class="input">
+                <label>Description</label><br>
+                <textarea type="text" id="description" name="description"></textarea>
+            </div>
+
+            <div class="input">
+                <input type="checkbox" id="TERMS">
+                <label>I agree to the terms and conditions.</label>
+                <div class="invalid" id="invalidterms"></div>
+            </div>
+            
+            <input type="submit" id="submitbutton" value="submit" onclick="validate()">
+            
+        </div>
+    </div>
+
+
+
+<script src="js/index.js"></script>
+</body>
+</html>

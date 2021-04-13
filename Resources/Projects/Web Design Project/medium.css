@@ -1,0 +1,10 @@
+nav ul li
+{
+    display:block;
+    border-right: 0px solid white;
+    
+}
+nav ul li a
+{
+    margin-left: 10%;
+}

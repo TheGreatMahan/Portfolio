@@ -1,0 +1,22 @@
+
+nav ul li
+{
+    display:block;
+    border-right: 0px solid white;
+}
+nav ul li a
+{
+    margin-left: 10%;
+}
+aside
+{
+    float: none;
+    width: 95%;
+    margin-left: 2%;
+
+}
+article
+{
+    width:95%;
+    margin-left: 2%;
+}
