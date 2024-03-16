@@ -149,7 +149,7 @@ function startTimer() {
 }
 
 function stopTimer() {
-    intervalStart = false;
+    intervalStart = true;
     clearInterval(interval);
 }
 
