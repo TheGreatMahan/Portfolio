@@ -1,4 +1,5 @@
 var time = 0;
+var interval;
 
 var columns = 9,
     rows = 9,
@@ -144,7 +145,12 @@ function setDifficulty() {
 function startTimer() {
     timeValue = 0;
     //makes sure there is only 1 interval
-    if (intervalStart) window.setInterval(onTimerTick, 1000);
+    if (intervalStart) interval = window.setInterval(onTimerTick, 1000);
+}
+
+function stopTimer() {
+    intervalStart = false;
+    clearInterval(interval);
 }
 
 function onTimerTick() {
@@ -392,6 +398,7 @@ const checkForWin = () => {
 
     gameWon = true;
     document.getElementById("smiley").classList.add("face_win");
+    stopTimer();
 
     gameOver = true;
 };
@@ -400,6 +407,7 @@ const checkForWin = () => {
 const setWinner = () => {
     if (gameWon) {
         document.getElementById("smiley").classList.add("face_win");
+        stopTimer();
         console.log("Game Won");
     }
 };

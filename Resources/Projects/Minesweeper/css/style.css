@@ -1,10 +1,13 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    
+}
 .tile {
     width: 16px;
     height: 16px;
     float: left;
     background-image: url("../images/clear.png");
 }
-
 .hidden {
     background-image: url("../images/hidden.png");
 }
