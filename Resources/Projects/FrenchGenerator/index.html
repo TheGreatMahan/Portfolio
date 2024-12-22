@@ -1,90 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Générateur de Nombres Aléatoires</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f4f4f9;
-        color: #333;
-    }
-    .container {
-        text-align: center;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        background: white;
-        border-radius: 8px;
-    }
-    button {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px 2px;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-    #numberDisplay, #frenchWord {
-        font-size: 2em;
-        margin-top: 20px;
-    }
-    #frenchWord {
-        filter: blur(15px);
-        cursor: pointer;
-        transition: filter 0.3s;
-    }
-    #frenchWord:hover {
-        filter: blur(2px);
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Nombres Aléatoires</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #numberDisplay,
+        #frenchWord {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        #frenchWord {
+            filter: blur(15px);
+            cursor: pointer;
+            transition: filter 0.3s;
+        }
+
+        #frenchWord:hover {
+            filter: blur(2px);
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-    <h1>Générateur de Nombres Aléatoires de 1 à 100</h1>
-    <p id="numberDisplay"></p>
-    <button onclick="generateRandomNumber()">Générer un nombre</button>
-    <div id="frenchWord" onclick="revealText()"></div>
-</div>
+    <div class="container">
+        <h1>Générateur de Nombres Aléatoires de 1 à 1000</h1>
+        <p id="numberDisplay"></p>
+        <button onclick="generateRandomNumber()">Générer un nombre</button>
+        <div id="frenchWord" onclick="revealText()"></div>
+    </div>
 
-<script>
-const numbersInFrench = [
-    "zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix",
-    "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt",
-    "vingt et un", "vingt-deux", "vingt-trois", "vingt-quatre", "vingt-cinq", "vingt-six", "vingt-sept", "vingt-huit", "vingt-neuf", "trente",
-    "trente et un", "trente-deux", "trente-trois", "trente-quatre", "trente-cinq", "trente-six", "trente-sept", "trente-huit", "trente-neuf", "quarante",
-    "quarante et un", "quarante-deux", "quarante-trois", "quarante-quatre", "quarante-cinq", "quarante-six", "quarante-sept", "quarante-huit", "quarante-neuf", "cinquante",
-    "cinquante et un", "cinquante-deux", "cinquante-trois", "cinquante-quatre", "cinquante-cinq", "cinquante-six", "cinquante-sept", "cinquante-huit", "cinquante-neuf", "soixante",
-    "soixante et un", "soixante-deux", "soixante-trois", "soixante-quatre", "soixante-cinq", "soixante-six", "soixante-sept", "soixante-huit", "soixante-neuf", "soixante-dix",
-    "soixante et onze", "soixante-douze", "soixante-treize", "soixante-quatorze", "soixante-quinze", "soixante-seize", "soixante-dix-sept", "soixante-dix-huit", "soixante-dix-neuf", "quatre-vingts",
-    "quatre-vingt-un", "quatre-vingt-deux", "quatre-vingt-trois", "quatre-vingt-quatre", "quatre-vingt-cinq", "quatre-vingt-six", "quatre-vingt-sept", "quatre-vingt-huit", "quatre-vingt-neuf", "quatre-vingt-dix",
-    "quatre-vingt-onze", "quatre-vingt-douze", "quatre-vingt-treize", "quatre-vingt-quatorze", "quatre-vingt-quinze", "quatre-vingt-seize", "quatre-vingt-dix-sept", "quatre-vingt-dix-huit", "quatre-vingt-dix-neuf", "cent"
-];
+    <script>
+        const oneToHundredInFrench = [
+            "zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix",
+            "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt",
+            "vingt et un", "vingt-deux", "vingt-trois", "vingt-quatre", "vingt-cinq", "vingt-six", "vingt-sept", "vingt-huit", "vingt-neuf", "trente",
+            "trente et un", "trente-deux", "trente-trois", "trente-quatre", "trente-cinq", "trente-six", "trente-sept", "trente-huit", "trente-neuf", "quarante",
+            "quarante et un", "quarante-deux", "quarante-trois", "quarante-quatre", "quarante-cinq", "quarante-six", "quarante-sept", "quarante-huit", "quarante-neuf", "cinquante",
+            "cinquante et un", "cinquante-deux", "cinquante-trois", "cinquante-quatre", "cinquante-cinq", "cinquante-six", "cinquante-sept", "cinquante-huit", "cinquante-neuf", "soixante",
+            "soixante et un", "soixante-deux", "soixante-trois", "soixante-quatre", "soixante-cinq", "soixante-six", "soixante-sept", "soixante-huit", "soixante-neuf", "soixante-dix",
+            "soixante et onze", "soixante-douze", "soixante-treize", "soixante-quatorze", "soixante-quinze", "soixante-seize", "soixante-dix-sept", "soixante-dix-huit", "soixante-dix-neuf", "quatre-vingts",
+            "quatre-vingt-un", "quatre-vingt-deux", "quatre-vingt-trois", "quatre-vingt-quatre", "quatre-vingt-cinq", "quatre-vingt-six", "quatre-vingt-sept", "quatre-vingt-huit", "quatre-vingt-neuf", "quatre-vingt-dix",
+            "quatre-vingt-onze", "quatre-vingt-douze", "quatre-vingt-treize", "quatre-vingt-quatorze", "quatre-vingt-quinze", "quatre-vingt-seize", "quatre-vingt-dix-sept", "quatre-vingt-dix-huit", "quatre-vingt-dix-neuf", "cent"
+        ];
+        const hundreds = [
+            "", "cent", "deux cent", "trois cent", "quatre cent", "cinq cent", "six cent", "sept cent", "huit cent", "neuf cent", "mille",
+        ]
 
-function generateRandomNumber() {
-    var randomNumber = Math.floor(Math.random() * 100) + 1;
-    document.getElementById('numberDisplay').innerHTML = randomNumber;
-    document.getElementById('frenchWord').innerHTML = numbersInFrench[randomNumber];
-    document.getElementById('frenchWord').style.filter = "blur(5px)";
-}
+        function generateRandomNumber() {
+            var randomNumber = Math.floor(Math.random() * 1000) + 1;
+            document.getElementById('numberDisplay').innerHTML = randomNumber;
+            document.getElementById('frenchWord').innerHTML = `${hundreds[Math.floor(randomNumber/100)]} ${oneToHundredInFrench[randomNumber%100]}`;
+            document.getElementById('frenchWord').style.filter = "blur(15px)";
+        }
 
-function revealText() {
-    document.getElementById('frenchWord').style.filter = "none";
-}
-</script>
+        function revealText() {
+            document.getElementById('frenchWord').style.filter = "none";
+        }
+    </script>
 </body>
+
 </html>
